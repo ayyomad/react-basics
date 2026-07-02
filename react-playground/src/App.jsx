@@ -125,25 +125,80 @@
   
 // }
 
-import { useState } from "react";
+// import { useState } from "react";
 
-function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
+// function App() {
+//   const [loggedIn, setLoggedIn] = useState(false);
 
-  return (
-    <div>
-      <h1>{loggedIn ? "Welcome!" : "Please Login"}</h1>
+//   return (
+//     <div>
+//       <h1>{loggedIn ? "Welcome!" : "Please Login"}</h1>
 
-      <button onClick={() => setLoggedIn(!loggedIn)}>
-        {loggedIn ? "Logout" : "Login"}
-      </button>
-      <p>{loggedIn ? "Access granted": "Access Denied"}</p>
-    </div>
+//       <button onClick={() => setLoggedIn(!loggedIn)}>
+//         {loggedIn ? "Logout" : "Login"}
+//       </button>
+//       <p>{loggedIn ? "Access granted": "Access Denied"}</p>
+//     </div>
     
-  );
+//   );
+// }
+
+
+// import MovieCard from "./MovieCard";
+
+// function App() {
+//   const movies = [
+//     {
+//       id: 1,
+//       title: "Interstellar",
+//       rating: 9,
+//     },
+//     {
+//       id: 2,
+//       title: "Inception",
+//       rating: 8.8,
+//     },
+//     {
+//       id: 3,
+//       title: "The Dark Knight",
+//       rating: 9.1,
+//     },
+//     {
+//       id: 4,
+//       title: "2018",
+//       rating: 9.5,
+//     },
+//   ];
+
+//   return (
+//     <div>
+//       <h1>Movies</h1>
+
+//       {movies.map((movie) => (
+//         <MovieCard
+//           key={movie.id}
+//           title={movie.title}
+//           rating={movie.rating}
+//         />
+//       ))}
+//     </div>
+//   );
+// }
+
+
+import { useEffect } from "react";
+
+
+function App() {  
+
+    useEffect(() => {
+        console.log("rendered");
+    }, []);
+
+    return (
+        <h1>Hello React</h1>
+    );
 }
 
+
 export default App;
-
-
-
