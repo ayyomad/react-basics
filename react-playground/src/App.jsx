@@ -1,5 +1,5 @@
-import MovieCard from "./MovieCard";
-import ProfileCard from "./ProfileCard";
+// import MovieCard from "./MovieCard";
+// import ProfileCard from "./ProfileCard";
 // function App() {
 //   return (
 //     <div>
@@ -33,7 +33,7 @@ import ProfileCard from "./ProfileCard";
 //   );
 // }
 
-import { useState } from "react";
+
 
 // function App() {
 //   const [count, setCount] = useState(100);
@@ -71,24 +71,75 @@ import { useState } from "react";
 //   );
 // }
 
+// function App() {
+//   const [username, setUsername] = useState("");
+
+//   return (
+//     <div>
+//       <h1>Login</h1>
+
+//       <input
+//         type="text"
+//         placeholder="Username"
+//         value={username}
+//         onChange={(event) => {
+//           setUsername(event.target.value);
+//         }}
+//       />
+
+//       <p>You typed: {username}</p>
+//     </div>
+//   );
+// }
+
+
+
+// function App(){
+//   const [username, setUsername] = useState('');
+//   const [password, setPassword] = useState('');
+
+//   const handleSubmit = (event) => {
+//     event.preventDefault();
+//     console.log('Username: ', username);
+//     console.log('Password: ', password);
+//   };
+
+//   return (
+//     <div>
+//       <form onSubmit={handleSubmit}>
+//         <label>Username:
+//         <input type="text" value={username} 
+//         onChange={(e)=> setUsername(e.target.value)}/>
+//         </label> <br /><br />
+
+//         <label>Password: 
+//           <input type="password" value={password}
+//           onChange={(e)=> setPassword(e.target.value)}/>
+//         </label>
+//         <br></br>
+//         <button type="submit">Login</button>
+
+//       </form>
+//     </div>
+//   );
+  
+// }
+
+import { useState } from "react";
+
 function App() {
-  const [username, setUsername] = useState("");
+  const [loggedIn, setLoggedIn] = useState(false);
 
   return (
     <div>
-      <h1>Login</h1>
+      <h1>{loggedIn ? "Welcome!" : "Please Login"}</h1>
 
-      <input
-        type="text"
-        placeholder="Username"
-        value={username}
-        onChange={(event) => {
-          setUsername(event.target.value);
-        }}
-      />
-
-      <p>You typed: {username}</p>
+      <button onClick={() => setLoggedIn(!loggedIn)}>
+        {loggedIn ? "Logout" : "Login"}
+      </button>
+      <p>{loggedIn ? "Access granted": "Access Denied"}</p>
     </div>
+    
   );
 }
 
